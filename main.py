@@ -4,31 +4,44 @@
 
 # Create the variable for the secret word and blank variable for the user's word
 secretWord = "AMPLIFIER"
-userWord = ""
+userWord = []
 count = 0
 
 
 # Create the function to get the user to enter a letter
-def getLetter():
+def getLetter(userGuess):
   userLetter = ""
-  if len(userLetter) > 1 or len(userLetter) > 1:
+  
+  while len(userLetter) != 1:
     
     userLetter = input("Enter a letter: ")
     
-    return userLetter.upper()
+  return userLetter.upper()
   
 
 # Create the function to display the secret word
-def diplaySecret(guess, actual):
+def displaySecret():
   
-  if userLetter in secretWord:
-    
-    print()
-
+# Go through each letter in the secret word, and determine HOW we display it
+  for letter in secretWord:
+  
+   if letter == userLetter:
+   
+  # If this letter (from the secret word) has been guessed, display the letter
+     print("userLetter", end ="")
+   
+    # Otherwise, display an underscore ( _ )
+  else: 
+    print("_", end ="")
+  
   
 # Create a function to tell if the user has won or not
-def checkGuess():
-  if userWord == secretWord:
+def checkGuess(letter, isLetterInWord = True):
+ # Go through each letter in the secret word
+  for letter in secretWord:
+    if letter == userLetter and
+
+    
     if count < 6:
       print("You have won!")
   else:
@@ -38,6 +51,7 @@ def checkGuess():
 # Design a loop for the game
 while count < 6 and userWord != secretWord:
   userLetter = getLetter("")
+  
   
   # Create a condition that stops the loop when the user has one or they've guessed 5 letters wrong
 
