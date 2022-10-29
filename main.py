@@ -11,6 +11,8 @@ print()
 
 # Give the user the game instructions
 print("Welcome to the classic word game, Hangman!")
+print("Guess the letters to make up the secret word. If you guess the wrong letter six times, you lose.")
+print()
 
 
 # Create the function to get the user to enter a letter
@@ -88,18 +90,24 @@ while count < 6 and checkGuess(secretWord, userGuesses) != True:
   if checkGuess(secretWord, userGuesses) == True:
 
     # tell them they won
-    print("You win")
+    print("You win!")
+    
+    # then show them where their letter is in the secret word
+    print("Word: ", end="")
+    displaySecret(secretWord, userGuesses)
     
   # if their letter guess is in the secret word 
-  if userLetter in secretWord:
+  elif userLetter in secretWord:
     
     # tell them good guess
     print("Good guess!")
     
     # then show them where their letter is in the secret word
+    print("Word: ", end="")
     displaySecret(secretWord, userGuesses)
     print()
-  
+    print()
+    
     # if their letter in not in the secret word
   else: 
 
@@ -118,5 +126,3 @@ while count < 6 and checkGuess(secretWord, userGuesses) != True:
       # tell them they lost
       print("Sorry, you lose!")
     print()
-
-  
